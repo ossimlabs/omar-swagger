@@ -1,0 +1,25 @@
+plugins {
+  id 'java-library'
+}
+
+dependencies {
+  api "io.swagger:swagger-models:${swaggerVersion}"
+  api "io.swagger:swagger-servlet:${swaggerVersion}"
+//  api "org.webjars:swagger-ui:${swaggerUiVersion}"
+}
+
+assets {
+  packagePlugin = true
+}
+
+jar {
+  exclude "grails-app/views/error.gsp",
+      "**/services.swaggerResources**",
+      "**/logback.groovy",
+      "**/logback.xml",
+      "**/logback**",
+      "**/logback/**",
+      "**/co/**",
+      "**/dto/**",
+      "**/schema_v2_0.json"
+}
